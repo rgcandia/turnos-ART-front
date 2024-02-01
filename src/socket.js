@@ -9,5 +9,15 @@ export const startSocket = ()=>{
     console.log('Connecting socket...')
     if (socket) {
        console.log("Conectado")
+       socket.emit('join')
       }
+}
+
+
+export const listenerData = (dispatch,action)=>{
+    socket.on('data',({users,horarios})=>{
+      if(users && horarios){
+        dispatch(action({users,horarios}))
+      }
+    })
 }

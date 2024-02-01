@@ -1,16 +1,20 @@
 
 import { useEffect } from 'react'
 import './App.css'
-import {startSocket} from './socket.js'
+import {startSocket,listenerData} from './socket.js'
+import {uploadData} from './redux/slice.js'
+import { useDispatch } from 'react-redux'
+
 function App() {
-  
+  const dispatch = useDispatch();
   useEffect(()=>{
     startSocket();
+    listenerData(dispatch,uploadData);
   },[])
 
   return (
     <>
-    <b1>Turnero en Proceso</b1>
+    <h1>Turnero en Proceso</h1>
     </>
   )
 }
