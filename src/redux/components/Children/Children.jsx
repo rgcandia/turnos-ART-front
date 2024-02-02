@@ -1,7 +1,8 @@
 import style from  './Children.module.css'
+import Horarios from './Horarios/Horarios';
 function Children (){
     return (<div>
-<h1>Soy el children  papá !</h1>
+        <Horarios/>
     </div>)
 }
 export default Children;
