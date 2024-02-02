@@ -23,5 +23,5 @@ export const listenerData = (dispatch,action)=>{
 }
 
 export const updateData = (obj)=>{
-  socket.emit('join',obj)
+  socket.emit('updateData',obj)
 }

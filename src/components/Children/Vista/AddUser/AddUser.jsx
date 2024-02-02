@@ -11,7 +11,6 @@ function AddUser (){
       };
       const handleGuardar = () =>{
         updateData({selected,selectedOption})
-        console.log("se envio, "+selected+" y "+selectedOption)
       }
     return(<div>
         <h3>Agregar Docente</h3>
