@@ -22,6 +22,6 @@ export const listenerData = (dispatch,action)=>{
     })
 }
 
-export const updateData = (obj)=>{
-  socket.emit('updateData',obj)
+export const updateData = ({selected,selectedOption})=>{
+  socket.emit('updateData',{horario:selected,user: selectedOption})
 }
