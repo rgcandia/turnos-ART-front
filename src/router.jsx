@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from './App.jsx';
-import Children from "./redux/components/Children/Children.jsx";
+import Children from "./components/Children/Children.jsx";
 const router = createBrowserRouter([
     {
       path: '/',
