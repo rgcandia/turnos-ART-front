@@ -4,7 +4,9 @@ import './App.css'
 import {startSocket,listenerData} from './socket.js'
 import {uploadData} from './redux/slice.js'
 import { useDispatch } from 'react-redux'
-
+import Nav from './redux/components/Nav/Nav.jsx'
+import Footer from './redux/components/Footer/Footer.jsx'
+import { Outlet } from 'react-router-dom'
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
@@ -14,7 +16,10 @@ function App() {
 
   return (
     <>
-    <h1>Turnero en Proceso</h1>
+    <Nav/>
+    <Outlet/>
+    <Footer/>
+
     </>
   )
 }

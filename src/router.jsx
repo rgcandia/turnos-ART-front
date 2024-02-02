@@ -1,15 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from './App.jsx';
+import Children from "./redux/components/Children/Children.jsx";
 const router = createBrowserRouter([
     {
       path: '/',
-      element: <App />,
-    //   errorElement: <Error404 />,
-    //   children:[
-    //     {
-    //       index:true,
-    //       element:<Index/>
-    //     },
+      element: <App />, 
+      children:[
+        {
+          index:true,
+          element:<Children/>
+        },
     //     {
     //       path:'/formulario',
     //       element:<DynamicForm/>
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     //       path:'/formulario/:id',
     //       element:<ViewForm/>
     //     }
-    //   ]
+      ]
     },
 
 
