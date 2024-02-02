@@ -5,9 +5,9 @@ function Horarios (){
     const {horas} =  useSelector(state=>state.data)
     return (<div className={style.horario}>
         <h2>HORARIOS</h2>
-        <div>
+        <div className={style.vistaHora}>
             {horas&&horas.map(e=><Card data={e}/>) }
-            
+           
         </div>
     </div>)
 }

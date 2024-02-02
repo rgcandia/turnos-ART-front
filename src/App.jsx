@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react'
-import './App.css'
+import style from './App.module.css'
 import {startSocket,listenerData} from './socket.js'
 import {uploadData} from './redux/slice.js'
 import { useDispatch } from 'react-redux'
@@ -14,12 +14,14 @@ function App() {
   },[])
 
   return (
-    <>
+    <div className={style.app}>
+    
     <Nav/>
     <Outlet/>
    
 
-    </>
+    
+    </div>
   )
 }
 

@@ -1,3 +1,9 @@
 .horario h2{
  text-align: center;
 }
+
+.vistaHora{
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
