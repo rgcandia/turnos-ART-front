@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import style from './Card.module.css'
 import { uploadSelected } from '../../../../redux/slice';
-function Card ({data}){
+function Card ({datos}){
     const {selected} = useSelector(state=>state.data);
     const dispatch = useDispatch();
-    const {hora,id} = data;
+    const {hora,id,data} = datos;
 
     const manejadorClick = ()=>{
         dispatch(uploadSelected(id))
     }
-    return(<div  className={`${style.btn} ${style.success} `} onClick={manejadorClick}>
+    return(<div  className={`${style.btn} ${selected===id?data.length<4?style.selectedSuccess:style.selectedDanger:data.length<4?style.success:style.danger} `} onClick={manejadorClick}>
         <h2>{hora}</h2>
     </div>)
 }

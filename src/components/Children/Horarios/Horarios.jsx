@@ -6,7 +6,7 @@ function Horarios (){
     return (<div className={style.horario}>
         <h2>HORARIOS</h2>
         <div className={style.vistaHora}>
-            {horas&&horas.map(e=><Card data={e} key={e.id}/>) }
+            {horas&&horas.map(e=><Card datos={e} key={e.id}/>) }
            
         </div>
     </div>)

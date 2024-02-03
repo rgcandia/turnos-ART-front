@@ -16,3 +16,8 @@
 
 .danger {background-color: white; border: 2px solid #f44336;} 
 .danger:hover {background: #da190b; color: white;}
+
+
+.selectedSuccess{background-color: #46a049; color: white;}
+.selectedDanger{background: #da190b; color: white;}
+
