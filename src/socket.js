@@ -14,14 +14,21 @@ export const startSocket = ()=>{
 }
 
 
-export const listenerData = (dispatch,action)=>{
-    socket.on('data',({users,horarios})=>{
-      if(users && horarios){
-        dispatch(action({users,horarios}))
+export const listenerData = (dispatch, action) => {
+  socket.on('data', ({ users, horarios }) => {
+      if (users && horarios) {
+          // Ordenar users por su ID
+          const sortedUsers = users.sort((a, b) => a.id - b.id);
+          // Ordenar horarios por su ID
+          const sortedHorarios = horarios.sort((a, b) => a.id - b.id);
+
+          // Despachar la acción con los arrays ordenados
+          dispatch(action({ users: sortedUsers, horarios: sortedHorarios }));
       }
-    })
-}
+  });
+};
+
 
 export const updateData = ({selected,selectedOption})=>{
-  socket.emit('updateData',{horario:selected,user: selectedOption})
+  socket.emit('updateData',{horario:selected,user: parseInt(selectedOption,10)})
 }

@@ -9,7 +9,7 @@ function AddUser (){
     const handleChange = (event) => {
         setSelectedOption(event.target.value);
       };
-      const handleGuardar = () =>{
+      const guardar = () =>{
         updateData({selected,selectedOption})
       }
     return(<div>
@@ -26,7 +26,7 @@ function AddUser (){
       <p>Opción seleccionada: {selectedOption}</p>
 
 
-      <button onClick={handleGuardar}>GUARDAR</button>
+      <button onClick={guardar}>GUARDAR</button>
     </div>)
 }
 export default AddUser;
