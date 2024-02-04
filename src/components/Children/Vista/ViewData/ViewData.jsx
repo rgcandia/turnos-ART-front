@@ -5,7 +5,7 @@ import CardHorarios from './CardHorarios/CardHorarios';
     const {selected,horas} = useSelector(state=>state.data)
     const hora = horas?.find(obj=>obj.id===selected)
     return(<div>
-        {hora?<h2>Datos Hora = {hora.hora}</h2>:<h2>NO SELECIONASTE NINGÚN HORARIO</h2>}
+        {hora?<h2>Datos Hora = {hora.hora}</h2>:<h2>Seleciona un Horario</h2>}
         {hora&&<CardHorarios horario={hora}/>}
     </div>)
  }
