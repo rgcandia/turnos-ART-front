@@ -20,7 +20,6 @@ function SearchUser() {
       const selectedHorario = horas.find((hora) => hora.id === selectedUser.turno);
       const horasReservadas = selectedHorario ? selectedHorario.hora : 'N/A';
       message = `El usuario "${userName}" ha reservado a las "${horasReservadas}" horas.`;
-      console.log(selectedHorario)
     } else {
       message = `El usuario "${userName}" no ha reservado ningún turno todavía.`;
     }
