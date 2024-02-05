@@ -12,13 +12,13 @@
 
 
 
-.success {background-color: white; border: 2px solid #04AA6D;} 
-.success:hover {background-color: #81a883; color: white;}
+.success {background-color: white; border: 2px solid #0c3f5c;} 
+.success:hover {background-color:  #1a6da0; color: white;}
 
 .danger {background-color: white; border: 2px solid #f44336;} 
 .danger:hover {background: #d66259; color: white;}
 
 
-.selectedSuccess{background-color: #46a049; color: white;}
+.selectedSuccess{background-color:#0c3f5c; color: white;}
 .selectedDanger{background: #da190b; color: white;}
 
