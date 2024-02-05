@@ -1,4 +1,5 @@
 import io from 'socket.io-client';
+import {cargaOk} from './Swal.js'
 let socket;
 const apiUrlDeploy = import.meta.env.VITE_URL_API_DEPLOY;
 const apiUrlDev = "http://localhost:4001/";
@@ -38,4 +39,12 @@ export const updateData = ({selected,selectedOption})=>{
 //evento para eliminar reserva
 export const eliminarReserva = ({userId,horarioId})=>{
   socket.emit('eliminarReserva',{userId,horarioId})
+}
+
+// evento de Alertas
+export const listenerAlert = ()=>{
+  socket.on('alert',({success,eliminado})=>{
+    {success&&cargaOk(success)}
+    {eliminado&&cargaOk(eliminado)}
+  })
 }

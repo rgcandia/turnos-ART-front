@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react'
 import style from './App.module.css'
-import {startSocket,listenerData} from './socket.js'
+import {startSocket,listenerData,listenerAlert} from './socket.js'
 import {uploadData} from './redux/slice.js'
 import { useDispatch } from 'react-redux'
 import Nav from './components/Nav/Nav.jsx'
@@ -11,6 +11,7 @@ function App() {
   useEffect(()=>{
     startSocket();
     listenerData(dispatch,uploadData);
+    listenerAlert();
   },[])
 
   return (
