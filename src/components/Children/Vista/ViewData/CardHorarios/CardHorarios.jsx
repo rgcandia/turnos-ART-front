@@ -41,6 +41,7 @@ function CardHorarios({ horario }) {
           ))}
         </tbody>
       </table>
+
     </div>
   );
 }

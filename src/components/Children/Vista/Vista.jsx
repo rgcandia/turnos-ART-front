@@ -7,7 +7,7 @@ function Vista (){
   return (<div className={styles.vista}>
         
         <ViewData/>
-        <AddUser/>
+        {/* <AddUser/> */}
     </div>)
 }
 export default  Vista;

@@ -6,6 +6,8 @@ import {updateData} from '../../../../socket.js'
 function AddUser (){
     const {users,selected} = useSelector(state=>state.data)
     const [selectedOption, setSelectedOption] = useState('');
+    //filtro los usuarios que no tienen reservas
+    const arrayUser = users.filter(user=>user.turno === null)
     const handleChange = (event) => {
         setSelectedOption(event.target.value);
       };
@@ -13,20 +15,22 @@ function AddUser (){
         updateData({selected,selectedOption})
       }
     return(<div>
-        <h3>Agregar Docente</h3>
-        <label htmlFor="dropdown">Selecciona una opción:</label>
+        <h3>Reservar turno</h3>
+        <label htmlFor="dropdown">Docente:</label>
       <select id="dropdown" value={selectedOption} onChange={handleChange}>
-        <option value="">Seleccione...</option>
-        {users&& users.map((opcion) => (
+        <option value=""> Seleccione...</option>
+        {arrayUser&& arrayUser.map((opcion) => (
           <option key={opcion.id} value={opcion.id}>
             {opcion.name}
           </option>
         ))}
       </select>
-      <p>Opción seleccionada: {selectedOption}</p>
+      
 
 
-      <button onClick={guardar}>GUARDAR</button>
+      <button onClick={guardar}>Reservar</button>
+      
     </div>)
 }
+
 export default AddUser;
