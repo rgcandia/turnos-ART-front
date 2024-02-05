@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import style from './CardHorarios.module.css';
 import { MdDeleteForever } from "react-icons/md";
 import { eliminarReserva } from '../../../../../socket.js';
-
+import {esperarUpdate} from '../../../../../Swal.js'
 function CardHorarios({ horario }) {
   const { users, selected } = useSelector(state => state.data);
   const { data } = horario;
@@ -17,6 +17,7 @@ function CardHorarios({ horario }) {
 
   const handleEliminarUsuario = (userId, horarioId) => {
     eliminarReserva({ userId, horarioId });
+    esperarUpdate();
   };
 
   return (
