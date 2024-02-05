@@ -10,7 +10,7 @@ function SearchUser() {
     setSelectedUserId(parseInt(event.target.value, 10));
   };
 
-  const selectedUser = users.find((user) => user.id === selectedUserId);
+  const selectedUser = users?.find((user) => user.id === selectedUserId);
 
   let message = '';
   if (selectedUser) {
