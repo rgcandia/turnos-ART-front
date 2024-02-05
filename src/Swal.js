@@ -1,7 +1,10 @@
 import Swal from 'sweetalert2'
 
 export function esperarUpdate (){
-    return Swal.fire("Un momento porfavor ...");
+    return Swal.fire({
+        title:"Un momento porfavor ...",
+        confirmButtonColor:'#0c3f5c'
+    });
 }
 export function cargaOk (mensaje){
     return Swal.fire({
