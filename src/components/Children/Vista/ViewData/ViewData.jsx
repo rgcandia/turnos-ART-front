@@ -6,7 +6,7 @@ import AddUser from '../AddUser/AddUser';
     const {selected,horas} = useSelector(state=>state.data)
     const hora = horas?.find(obj=>obj.id===selected)
     return(<div>
-        {hora?<h2>Reservas para las {hora.hora}</h2>:<h2>Seleciona un Horario</h2>}
+        {hora?<h2>Reservas  {hora.hora} horas</h2>:<h2>Seleciona un Horario</h2>}
         {hora&&<CardHorarios horario={hora}/>}
         {hora?.data.length<4 && <AddUser/>}
     </div>)

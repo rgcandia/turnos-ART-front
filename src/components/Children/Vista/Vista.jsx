@@ -1,13 +1,13 @@
 import styles from './Vista.module.css'
-import AddUser from './AddUser/AddUser';
 import ViewData from './ViewData/ViewData';
+import SearchUser from './SearchUser/SearchUser';
 
 function Vista (){
     
   return (<div className={styles.vista}>
         
         <ViewData/>
-        {/* <AddUser/> */}
+        <SearchUser/>
     </div>)
 }
 export default  Vista;

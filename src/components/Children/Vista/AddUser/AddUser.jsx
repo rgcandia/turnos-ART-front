@@ -15,8 +15,8 @@ function AddUser (){
         updateData({selected,selectedOption})
       }
     return(<div>
-        <h3>Reservar turno</h3>
-        <label htmlFor="dropdown">Docente:</label>
+        <h4>Reservar Turno</h4>
+        {/* <label htmlFor="dropdown">Docente:</label> */}
       <select id="dropdown" value={selectedOption} onChange={handleChange}>
         <option value=""> Seleccione...</option>
         {arrayUser&& arrayUser.map((opcion) => (
