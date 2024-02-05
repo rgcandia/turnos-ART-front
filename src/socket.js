@@ -32,3 +32,8 @@ export const listenerData = (dispatch, action) => {
 export const updateData = ({selected,selectedOption})=>{
   socket.emit('updateData',{horario:selected,user: parseInt(selectedOption,10)})
 }
+
+//evento para eliminar reserva
+export const eliminarReserva = ({userId,horarioId})=>{
+  socket.emit('eliminarReserva',{userId,horarioId})
+}
