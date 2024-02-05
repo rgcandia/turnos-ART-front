@@ -7,6 +7,8 @@ const apiUrl = import.meta.env.PROD ? apiUrlDeploy : apiUrlDev;
 export const startSocket = ()=>{
     socket = io(apiUrl,{transports:['websocket']})
     console.log('Connecting socket...')
+    console.log("prueba")
+    console.log(apiUrl)
     if (socket) {
        console.log("Conectado")
        socket.emit('join')

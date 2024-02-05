@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import style from './AddUser.module.css'
 import { useState } from 'react';
 import {updateData} from '../../../../socket.js'
-
+import {esperarUpdate} from '../../../../Swal.js'
 function AddUser (){
     const {users,selected} = useSelector(state=>state.data)
     const [selectedOption, setSelectedOption] = useState('');
@@ -12,7 +12,13 @@ function AddUser (){
         setSelectedOption(event.target.value);
       };
       const guardar = () =>{
-        updateData({selected,selectedOption})
+        if(selectedOption!==''){
+          updateData({selected,selectedOption})
+          esperarUpdate();
+          setSelectedOption('')
+        }
+      
+
       }
     return(<div>
         <h4>Reservar Turno</h4>
