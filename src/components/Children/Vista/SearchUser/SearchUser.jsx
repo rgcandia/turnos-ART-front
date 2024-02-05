@@ -1,3 +1,5 @@
+// SearchUser.js
+
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import style from './SearchUser.module.css';
@@ -26,13 +28,14 @@ function SearchUser() {
   }
 
   return (
-    <div>
-      <h4>Buscar Usuario</h4>
-      <label htmlFor="userSelect">Selecciona un usuario:</label>
+    <div className={style.searchUserContainer}>
+      <h4 className={style.searchUserTitle}>Buscar Usuario</h4>
+      
       <select
         id="userSelect"
         value={selectedUserId || ''}
         onChange={handleUserChange}
+        className={style.searchUserSelect}
       >
         <option value="">Selecciona un usuario</option>
         {users?.map((user) => (
@@ -43,9 +46,9 @@ function SearchUser() {
       </select>
 
       {selectedUser && <p>{message}</p>}
+      <button className={style.searchUserButton}>Buscar</button>
     </div>
   );
 }
 
 export default SearchUser;
-

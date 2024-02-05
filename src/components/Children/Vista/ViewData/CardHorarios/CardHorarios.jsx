@@ -1,28 +1,29 @@
+// CardHorarios.js
+
+import React from 'react';
 import { useSelector } from 'react-redux';
 import style from './CardHorarios.module.css';
 import { MdDeleteForever } from "react-icons/md";
-import {eliminarReserva} from '../../../../../socket.js'
+import { eliminarReserva } from '../../../../../socket.js';
+
 function CardHorarios({ horario }) {
-  const { users,selected } = useSelector(state => state.data);
+  const { users, selected } = useSelector(state => state.data);
   const { data } = horario;
 
-  // Crear un array de objetos con el nombre y el ID de los usuarios correspondientes a los IDs en el array data
   const nombresDeUsuarios = data.map(id => {
-    const usuario = users.find(user => user.id === id); // Encontrar el usuario por su ID
-    return usuario ? { id: usuario.id, nombre: usuario.name } : null; // Retornar un objeto con el nombre y el ID del usuario si se encuentra, o null si no se encuentra
-  }).filter(usuario => usuario !== null); // Filtrar los usuarios que no se encontraron
+    const usuario = users.find(user => user.id === id);
+    return usuario ? { id: usuario.id, nombre: usuario.name } : null;
+  }).filter(usuario => usuario !== null);
 
-  const handleEliminarUsuario = (userId,horarioId) => {
-    // Aquí puedes implementar la lógica para eliminar el usuario correspondiente al ID 'id'
-    eliminarReserva({userId,horarioId})
+  const handleEliminarUsuario = (userId, horarioId) => {
+    eliminarReserva({ userId, horarioId });
   };
 
   return (
-    <div>
+    <div className={style.cardHorarios}>
       <table className={style.tablaUsuarios}>
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nombre de Usuario</th>
             <th>Eliminar</th>
           </tr>
@@ -30,10 +31,9 @@ function CardHorarios({ horario }) {
         <tbody>
           {nombresDeUsuarios.map((usuario) => (
             <tr key={usuario.id}>
-              <td>{usuario.id}</td>
               <td>{usuario.nombre}</td>
               <td>
-                <button onClick={() => handleEliminarUsuario(usuario.id,selected)}>
+                <button className={style.buttonEliminar} onClick={() => handleEliminarUsuario(usuario.id, selected)}>
                   <MdDeleteForever />
                 </button>
               </td>
@@ -41,7 +41,6 @@ function CardHorarios({ horario }) {
           ))}
         </tbody>
       </table>
-
     </div>
   );
 }

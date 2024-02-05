@@ -1,6 +1,7 @@
 .children {
     display: grid;
     grid-template-columns: 1fr 2fr;
-   
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
