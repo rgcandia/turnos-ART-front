@@ -8,7 +8,7 @@ import AddUser from '../AddUser/AddUser';
     return(<div>
         {hora?<div style={{textAlign:'center'}}><h1>Reservas  {hora.hora} horas</h1></div>:<div><h2>Seleciona un Horario</h2></div>}
         {hora?.data.length>0&&<CardHorarios horario={hora}/>}
-        {hora?.data.length<4 && <AddUser/>}
+        {hora?.data.length<6 && <AddUser/>}
     </div>)
  }
  export default ViewData;
