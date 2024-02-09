@@ -9,25 +9,25 @@ function Print() {
     const doc = new jsPDF();
       // Configurar el estilo para el texto en todas las columnas
       const columnTextStyle = { align: 'rigth' };
-    const handlePDF = () => {
-        
+      const handlePDF = () => {
         autoTable(doc, {
-            
             head: [['Nombre Completo', 'Horario Reservado']],
             body: [],
-            bodyStyles: {
-                cell: { halign: 'center', valign: 'middle' } // Estilos para todas las celdas del cuerpo
-            }
         });
 
         users.forEach((usuario) => {
             const horaReservada = horas.find(hora => hora?.id === usuario.turno);
             const horario = horaReservada ? horaReservada.hora : 'NO';
+            
+            // Agregar fila sin estilos específicos
             doc.autoTable({ body: [[usuario.name, horario]] });
         });
-
+    
         doc.save('turnos.pdf');
     };
+    
+    
+    
 
     return (
         <div >
