@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 import {cargaOk} from './Swal.js'
 let socket;
 const apiUrlDeploy = import.meta.env.VITE_URL_API_DEPLOY;
-const apiUrlDev = "http://localhost:4001/";
+const apiUrlDev = "https://visible-rat-alecandia-41de4951.koyeb.app";
 const apiUrl = import.meta.env.PROD ? apiUrlDeploy : apiUrlDev;
 
 export const startSocket = ()=>{
