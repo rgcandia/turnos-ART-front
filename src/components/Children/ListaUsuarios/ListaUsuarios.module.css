@@ -1,0 +1,29 @@
+.cardHorarios {
+  max-width: 840px;
+}
+
+.tablaUsuarios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.tablaUsuarios th,
+.tablaUsuarios td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tablaUsuarios th {
+  background-color: #0c3f5c;
+  color: #fff;
+}
+
+.tablaUsuarios td {
+  background-color: #ffffff;
+}
+
+.tablaUsuarios tr:hover {
+  background-color: #e0e0e0;
+}
