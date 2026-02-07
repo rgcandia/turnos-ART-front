@@ -1,29 +1,51 @@
-.cardHorarios {
-  max-width: 840px;
+.card {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.tablaUsuarios {
+.title {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #0c3f5c;
+}
+
+.tabla {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  font-size: 0.9rem;
 }
 
-.tablaUsuarios th,
-.tablaUsuarios td {
+.tabla th,
+.tabla td {
+  padding: 8px 10px;
   border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
 }
 
-.tablaUsuarios th {
+.tabla th {
   background-color: #0c3f5c;
   color: #fff;
 }
 
-.tablaUsuarios td {
-  background-color: #ffffff;
+.tabla tr:nth-child(even) {
+  background-color: #f7f9fb;
 }
 
-.tablaUsuarios tr:hover {
-  background-color: #e0e0e0;
+.tabla tr:hover {
+  background-color: #eef4f8;
+}
+
+.reservado {
+  color: #0c3f5c;
+  font-weight: 600;
+}
+
+.libre {
+  color: #999;
 }

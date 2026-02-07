@@ -1,44 +1,41 @@
-/* CardHorarios.module.css */
-
 .cardHorarios {
-max-width: 840px;
-
+  margin-top: 10px;
 }
 
 .tablaUsuarios {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  font-size: 0.9rem;
 }
 
-.tablaUsuarios th, .tablaUsuarios td {
+.tablaUsuarios th,
+.tablaUsuarios td {
+  padding: 8px 10px;
   border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
 }
 
 .tablaUsuarios th {
   background-color: #0c3f5c;
   color: #fff;
+  text-align: left;
 }
 
-.tablaUsuarios td {
-  background-color: #ffffff;
+.tablaUsuarios tr:nth-child(even) {
+  background-color: #f7f9fb;
 }
 
 .tablaUsuarios tr:hover {
-  background-color: #e0e0e0;
+  background-color: #eef4f8;
 }
 
 .buttonEliminar {
-  font-size: 15px;
   background-color: #0c3f5c;
   color: #fff;
   border: none;
-  padding: 8px 12px;
+  padding: 6px 8px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1rem;
 }
 
 .buttonEliminar:hover {

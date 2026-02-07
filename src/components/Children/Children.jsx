@@ -1,18 +1,20 @@
-import style from './Children.module.css'
-import Horarios from './Horarios/Horarios'
-import Vista from './Vista/Vista'
-import ListaUsuarios from './ListaUsuarios/ListaUsuarios'
+import style from './Children.module.css';
+import Horarios from './Horarios/Horarios';
+import Vista from './Vista/Vista';
+import ListaUsuarios from './ListaUsuarios/ListaUsuarios';
+import SelectorFecha from '../Children/SelectorFecha/SelectorFecha';
 
-function Children () {
+function Children() {
   return (
     <div className={style.children}>
-      <Horarios/>
-      <Vista/>
+      <SelectorFecha />
+      <Horarios />
+      <Vista />
       <div className={style.fullWidth}>
-        <ListaUsuarios/>
+        <ListaUsuarios />
       </div>
     </div>
-  )
+  );
 }
 
-export default Children
+export default Children;

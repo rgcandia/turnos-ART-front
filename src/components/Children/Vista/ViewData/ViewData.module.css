@@ -1,0 +1,14 @@
+.container {
+  max-width: 860px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0c3f5c;
+}
+
+.empty {
+  text-align: center;
+  color: #777;
+}

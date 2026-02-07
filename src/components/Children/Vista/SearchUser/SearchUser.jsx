@@ -1,54 +1,58 @@
-// SearchUser.js
-
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import style from './SearchUser.module.css';
 
 function SearchUser() {
-  const { users, horas } = useSelector((state) => state.data);
-  const [selectedUserId, setSelectedUserId] = useState(null);
+  const { users, horas } = useSelector(state => state.data);
+  const [selectedUserId, setSelectedUserId] = useState('');
 
-  const handleUserChange = (event) => {
-    setSelectedUserId(parseInt(event.target.value, 10));
-  };
-
-  const selectedUser = users?.find((user) => user.id === selectedUserId);
+  const selectedUser = users?.find(
+    user => user.id === Number(selectedUserId)
+  );
 
   let message = '';
-  if (selectedUser) {
-    const userName = selectedUser.name;
 
+  if (selectedUser) {
     if (selectedUser.turno !== null) {
-      const selectedHorario = horas.find((hora) => hora.id === selectedUser.turno);
-      const horasReservadas = selectedHorario ? selectedHorario.hora : 'N/A';
-      message = `El usuario "${userName}" ha reservado a las "${horasReservadas}" horas.`;
+      const horario = horas?.find(h => h.id === selectedUser.turno);
+
+      if (horario) {
+        const fecha = new Date(horario.fecha).toLocaleDateString('es-AR');
+
+        message = `El usuario "${selectedUser.name}" tiene un turno el día ${fecha} a las ${horario.hora} hs.`;
+      } else {
+        message = `El usuario "${selectedUser.name}" tiene un turno asignado.`;
+      }
     } else {
-      message = `El usuario "${userName}" no ha reservado ningún turno todavía.`;
+      message = `El usuario "${selectedUser.name}" no tiene ningún turno asignado.`;
     }
   }
 
   return (
-    <div className={style.searchUserContainer}>
-      <h4 className={style.searchUserTitle}>Buscar Usuario</h4>
-      
+    <div className={style.container}>
+      <h4 className={style.title}>Buscar Usuario</h4>
+
       <select
-        id="userSelect"
-        value={selectedUserId || ''}
-        onChange={handleUserChange}
-        className={style.searchUserSelect}
+        className={style.select}
+        value={selectedUserId}
+        onChange={e => setSelectedUserId(e.target.value)}
       >
         <option value="">Selecciona un usuario</option>
-        {users?.map((user) => (
+        {users?.map(user => (
           <option key={user.id} value={user.id}>
             {user.name}
           </option>
         ))}
       </select>
 
-      {selectedUser && <p>{message}</p>}
-      <button className={style.searchUserButton}>Buscar</button>
+      {selectedUser && (
+        <p className={style.result}>
+          {message}
+        </p>
+      )}
     </div>
   );
 }
 
 export default SearchUser;
+
