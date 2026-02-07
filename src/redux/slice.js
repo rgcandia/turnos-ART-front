@@ -3,7 +3,7 @@ const initialState = {
     users:null,
     horas:null,
     selected:null,
-     fechaSeleccionada: '2026-03-02' // default (día 1)
+     fechaSeleccionada: '2026-02-11' // default (día 1)
   }
   export const stateSlice = createSlice({
     name: 'state',
