@@ -1,7 +1,7 @@
 import styles from './Vista.module.css'
 import ViewData from './ViewData/ViewData';
 import SearchUser from './SearchUser/SearchUser';
-import Print from '../../Print/Print';
+
 
 function Vista (){
     
@@ -9,7 +9,7 @@ function Vista (){
         
         <ViewData/>
         <SearchUser/>
-        <Print/>
+     
     </div>)
 }
 export default  Vista;
