@@ -9,5 +9,7 @@
 .fullWidth {
   grid-column: 1 / -1; /* ocupa todas las columnas */
   display: flex;
-  justify-content: center; /* lo centra */
+  flex-direction: column; /* 👈 clave */
+  align-items: center;    /* centra horizontalmente */
+  gap: 1rem;              /* espacio entre SearchUser y ListaUsuarios */
 }
