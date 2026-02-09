@@ -12,12 +12,18 @@ function SearchUser() {
 
   let message = '';
 
+  const formatearFecha = (fechaISO) => {
+  const [year, month, day] = fechaISO.split('-')
+  return `${day}/${month}/${year}`
+}
+
+  
   if (selectedUser) {
     if (selectedUser.turno !== null) {
       const horario = horas?.find(h => h.id === selectedUser.turno);
 
       if (horario) {
-        const fecha = new Date(horario.fecha).toLocaleDateString('es-AR');
+        const fecha = formatearFecha(horario.fecha);
 
         message = `El usuario "${selectedUser.name}" tiene un turno el día ${fecha} a las ${horario.hora} hs.`;
       } else {
