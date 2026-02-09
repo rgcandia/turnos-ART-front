@@ -4,6 +4,12 @@ import styles from './ListaUsuarios.module.css'
 function ListaUsuarios() {
   const { users, horas } = useSelector(state => state.data)
 
+  const formatearFecha = (fechaISO) => {
+  const [year, month, day] = fechaISO.split('-')
+  return `${day}/${month}/${year}`
+}
+
+
   const obtenerTurnoUsuario = (userId) => {
     if (!horas) return null
 
@@ -12,11 +18,15 @@ function ListaUsuarios() {
     )
 
     if (!horario) return null
+ 
 
-    return {
-      hora: horario.hora,
-      fecha: new Date(horario.fecha).toLocaleDateString('es-AR')
-    }
+
+
+return {
+  hora: horario.hora,
+  fecha: formatearFecha(horario.fecha)
+}
+
   }
 
   return (
@@ -36,7 +46,7 @@ function ListaUsuarios() {
         <tbody>
           {users?.map(user => {
             const turno = obtenerTurnoUsuario(user.id)
-
+       
             return (
               <tr key={user.id}>
                 <td>{user.name}</td>
